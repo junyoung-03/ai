@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>편하게 들어와 AI</title>
+  <!DOCTYPE html>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="undercontants.css">
+</head>
+<body>
+
+<header>
+  <h1>편하게 들어와 AI</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">홈화면</a></li>
+      <li><a href="list.html">AI 리스트</a></li>
+      <li><a href="rank.html">AI 랭킹</a></li>
+      <li><a href="recent.html">최신 AI</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  
+<form onsubmit="return directJump();" class="search-container">
+  <input type="text" id="searchInput" placeholder="AI 이름을 입력하세요" required>
+  <button type="submit">검색</button>
+</form>
+
+<div class="container">
+  <div class="category-box">
+    <a href="list.html"> AI 리스트 </a>
+  </div>
+
+  <div class="category-box">
+    <a href="rank.html"> AI 랭킹 </a>
+  </div>
+
+  <div class="category-box">
+    <a href="recent.html"> 최신 AI </a>
+  </div>
+</div>
+
+ <section class="section">
+    <h2> 추천 AI</h2>
+    <a href="Meta.html" class="recommend-card" target="_blank" style="text-decoration: none; color: inherit;">
+      <img src="LIama.png" alt="LIama 4">
+      <div>
+        <div class="title"><strong>Llama 4 (Meta)</strong></div>
+        <div class="desc">초거대 모델의 품격, 대화의 신세계</div>
+      </div>
+    </div>
+</a>
+ <div class="ai-section">
+  <h2>카테고리별 대표 AI</h2>
+
+  <div class="ai-card-container">
+
+ <!-- 섹터 클릭시 이동 -->
+<a href="gpt.html" class="ai-card" target="_blank" style="text-decoration: none; color: inherit;">
+      <h5> LLM엔진 </h5>
+          <img src="gpt.png">
+      <div class="label">ChatGpt</div>
+</a>
+
+  <a href="Gamma.html" class="ai-card" target="_blank" style="text-decoration: none; color: inherit;">
+      <h5> ppt엔진 </h5>
+          <img src="Gamma.png">
+      <div class="label">Gamma</div>
+</a>
+
+  <a href="Githubcopilot.html" class="ai-card" target="_blank" style="text-decoration: none; color: inherit;">
+      <h5> 코딩엔진 </h5>
+          <img src="github.png">
+      <div class="label">GitHub Copilot</div>
+</a>
+  <a href="Otter.html" class="ai-card" target="_blank" style="text-decoration: none; color: inherit;">
+      <h5> 요약정리엔진 </h5>
+          <img src="gpt.png">
+      <div class="label">Otter.ai</div>
+</a>
+  <a href="perplexity.html" class="ai-card" target="_blank" style="text-decoration: none; color: inherit;">
+      <h5> 검색엔진 </h5>
+          <img src="perplexity.png">
+      <div class="label">Perplexity AI</div>
+</a>
+  </div>
+</div>
+
+
+<footer>
+  <pre>
+   © 2024 편하게 들어와 AI. All rights reserved.
+   이거해줘 서피티 노창준 서필립 정준영
+</footer>
+
+<!-- 🔧 검색 기능 스크립트 -->
+<script>
+  const aiMap = {
+    "m":"Meta.html",
+ "meta": "Meta.html",
+  "grok": "grok.html",
+  "grok3": "grok3.html",
+  "claude": "claude.html",
+  "cursor": "cursor.html",
+  "amazon": "amazoncodewhisperer.html",
+  "amazon code whisperer": "amazoncodewhisperer.html",
+  "you": "You.html",
+  "you.com": "You.html",
+  "whisper": "whisper.html",
+  "tome": "Tome.html",
+  "tabnine": "Tabnine.html",
+  "poe": "poe.html",
+  "mistral": "mistral.html",
+  "manus": "Manus.html",
+  "deepseek": "DeepSeek.html",
+  "descript": "descript.html",
+  "fireflies": "fireflies.html",
+  "gamma": "Gamma.html",
+  "ppt": "Gamma.html",
+  "gemini": "gemini.html",
+  "github": "Githubcopilot.html",
+  "github copilot": "Githubcopilot.html",
+  "copilot": "copilot.html",
+  "chatgpt": "gpt.html",
+  "gpt": "gpt.html",
+  "replit": "ReplitGhostwriter.html",
+  "ghostwriter": "ReplitGhostwriter.html",
+  "perplexity": "perplexity.html",
+  "otter": "otter.html",
+  "otter.ai": "otter.html",
+  "notta": "notta.html",
+  "windsurf": "Windsurf.html",
+  "genspark": "genspark.html",
+  "phind": "Phind.html",
+  "felo": "FeloAI.html",
+  "feloai": "FeloAI.html",
+  "duckduckgo": "DuckDuckGo.html",
+  "slides":"slides.html",
+  };
+
+  function directJump() {
+    const input = document.getElementById("searchInput").value.trim().toLowerCase();
+    const url = aiMap[input];
+
+    if (url) {
+      window.location.href = url;
+    } else {
+      alert("해당 AI를 찾을 수 없습니다. 정확한 이름을 입력해 주세요.");
+    }
+
+    return false; // 폼 기본 제출 막기
+  }
+</script>
+
+
+</body>
+</html>
+  

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>검색 결과</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .result-item { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+
+<h2>🔍 검색 결과</h2>
+<div id="searchResults"></div>
+
+<script>
+  const query = new URLSearchParams(window.location.search).get("q")?.toLowerCase() || "";
+
+  const aiList = [
+    { name: 'ChatGPT', desc: '가장 인기 있는 대화형 AI입니다.', url: 'gpt.html' },
+    { name: 'Gamma', desc: 'PPT 만들기 AI', url: 'Gamma.html' },
+    { name: 'GitHub Copilot', desc: '코딩 보조 AI', url: 'Githubcopilot.html' },
+    { name: 'Otter.ai', desc: '회의 요약 및 음성 텍스트 변환 AI', url: 'Otter.html' }
+  ];
+
+  const results = aiList.filter(ai =>
+    ai.name.toLowerCase().includes(query) || ai.desc.toLowerCase().includes(query)
+  );
+
+  const container = document.getElementById("searchResults");
+
+  if (!query) {
+    container.innerHTML = '<p>검색어를 입력해 주세요.</p>';
+  } else if (results.length === 0) {
+    container.innerHTML = `<p>‘${query}’에 대한 검색 결과가 없습니다.</p>`;
+  } else {
+    results.forEach(ai => {
+      container.innerHTML += `
+        <div class="result-item">
+          <a href="${ai.url}" target="_blank"><strong>${ai.name}</strong></a> - ${ai.desc}
+        </div>
+      `;
+    });
+  }
+</script>
+
+</body>
+</html>

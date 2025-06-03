@@ -1,0 +1,91 @@
+/* 브라우저 통일을 위한 reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.5;
+}
+
+/* 카테고리 컨테이너 */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 카테고리 박스 */
+.category-box {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 20px;
+  flex: 1 1 calc(33.33% - 80px); /* 3개 정렬 기준 (gap 고려) */
+  max-width: 300px;
+  min-width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 30px 10px;
+  font-size: 16px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+/* hover 효과 */
+.category-box:hover {
+  transform: translateY(-5px);
+}
+
+/* 제목 */
+.category-box h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+/* 리스트 */
+.category-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.category-box li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* 링크 스타일 */
+.category-box a {
+  color: #1e90ff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 8px 0;
+}
+
+.category-box a:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+/* ✅ 모바일 대응: 한 줄에 2개 → 1개 */
+@media (max-width: 900px) {
+  .category-box {
+    flex: 1 1 calc(50% - 60px);
+  }
+}
+
+@media (max-width: 600px) {
+  .category-box {
+    flex: 1 1 100%;
+  }
+}
